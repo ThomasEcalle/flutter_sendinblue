@@ -1,5 +1,5 @@
 name: flutter_sendinblue
-description: A new Flutter project.
+description: Simple wrapper around Sendinblue API.
 version: 0.0.1
 homepage: https://github.com/ThomasEcalle/flutter_sendinblue
 
