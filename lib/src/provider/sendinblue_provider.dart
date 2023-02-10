@@ -19,5 +19,8 @@ abstract class SendinblueProvider {
 
   Future<void> removeContactFromEmailsBlackList({required String email});
 
-  Future<void> updateContactProperties({required String email, required Map<String, dynamic> properties});
+  Future<void> updateContactProperties({
+    required String email,
+    required Map<String, dynamic> properties,
+  });
 }

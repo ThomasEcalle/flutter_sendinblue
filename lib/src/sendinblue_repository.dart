@@ -18,7 +18,10 @@ class SendinblueRepository {
     return await sendingBlueProvider.getAllContacts();
   }
 
-  Future<List<Contact>> getContacts({required int offset, required int limit}) async {
+  Future<List<Contact>> getContacts({
+    required int offset,
+    required int limit,
+  }) async {
     return await sendingBlueProvider.getContacts(offset: offset, limit: limit);
   }
 
@@ -31,10 +34,13 @@ class SendinblueRepository {
   }
 
   Future<void> removeContactFromEmailsBlackList({required String email}) async {
-    return await sendingBlueProvider.removeContactFromEmailsBlackList(email: email);
+    return await sendingBlueProvider.removeContactFromEmailsBlackList(
+        email: email);
   }
 
-  Future<void> updateContactProperties({required String email, required Map<String, dynamic> properties}) async {
-    return await sendingBlueProvider.updateContactProperties(email: email, properties: properties);
+  Future<void> updateContactProperties(
+      {required String email, required Map<String, dynamic> properties}) async {
+    return await sendingBlueProvider.updateContactProperties(
+        email: email, properties: properties);
   }
 }

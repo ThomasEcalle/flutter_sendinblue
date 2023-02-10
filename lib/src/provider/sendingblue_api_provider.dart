@@ -75,7 +75,10 @@ class SendinblueApiProvider extends SendinblueProvider {
   }
 
   @override
-  Future<void> updateContactProperties({required String email, required Map<String, dynamic> properties}) async {
+  Future<void> updateContactProperties({
+    required String email,
+    required Map<String, dynamic> properties,
+  }) async {
     await _put(
       path: '/contacts/$email',
       body: {
@@ -91,7 +94,8 @@ class SendinblueApiProvider extends SendinblueProvider {
     );
   }
 
-  Future<Map<String, dynamic>> _post({required String path, required Map<String, dynamic> body}) async {
+  Future<Map<String, dynamic>> _post(
+      {required String path, required Map<String, dynamic> body}) async {
     final response = await http.post(
       Uri.parse('$_baseUrl$path'),
       headers: _buildHeaders(),
@@ -120,7 +124,8 @@ class SendinblueApiProvider extends SendinblueProvider {
     }
   }
 
-  Future<Map<String, dynamic>> _put<T>({required String path, required Map<String, dynamic> body}) async {
+  Future<Map<String, dynamic>> _put<T>(
+      {required String path, required Map<String, dynamic> body}) async {
     try {
       final response = await http.put(
         Uri.parse('$_baseUrl$path'),

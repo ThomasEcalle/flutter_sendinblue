@@ -142,9 +142,13 @@ class _ContactDetailPageState extends State<ContactDetailPage> {
     });
 
     if (contact.emailBlackListed) {
-      await Sendinblue.instance.removeContactFromEmailsBlackList(email: contact.email);
+      await Sendinblue.instance.removeContactFromEmailsBlackList(
+        email: contact.email,
+      );
     } else {
-      await Sendinblue.instance.addContactInEmailsBlackList(email: contact.email);
+      await Sendinblue.instance.addContactInEmailsBlackList(
+        email: contact.email,
+      );
     }
 
     setState(() {

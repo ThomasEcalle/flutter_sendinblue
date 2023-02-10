@@ -27,18 +27,23 @@ void main() {
     });
 
     test('Should create a contact', () async {
-      final contactId = await Sendinblue.instance.createContact(email: testUserEmail);
+      final contactId = await Sendinblue.instance.createContact(
+        email: testUserEmail,
+      );
       expect(contactId, isNotNull);
     });
 
     test('Should get a contact', () async {
-      final contact = await Sendinblue.instance.getContact(email: testUserEmail);
+      final contact = await Sendinblue.instance.getContact(
+        email: testUserEmail,
+      );
       expect(contact, isNotNull);
       expect(contact.email, testUserEmail);
     });
 
     test('Should update a contact', () async {
-      final contact = await Sendinblue.instance.getContact(email: testUserEmail);
+      final contact =
+          await Sendinblue.instance.getContact(email: testUserEmail);
       expect(contact, isNotNull);
       expect(contact.email, testUserEmail);
 
@@ -49,7 +54,8 @@ void main() {
         },
       );
 
-      final updatedContact = await Sendinblue.instance.getContact(email: testUserEmail);
+      final updatedContact =
+          await Sendinblue.instance.getContact(email: testUserEmail);
 
       expect(updatedContact, isNotNull);
       expect(updatedContact.email, testUserEmail);
@@ -57,13 +63,15 @@ void main() {
     });
 
     test('Should delete a contact', () async {
-      final contact = await Sendinblue.instance.getContact(email: testUserEmail);
+      final contact =
+          await Sendinblue.instance.getContact(email: testUserEmail);
       expect(contact, isNotNull);
       expect(contact.email, testUserEmail);
 
       await Sendinblue.instance.deleteContact(email: testUserEmail);
 
-      expect(() => Sendinblue.instance.getContact(email: testUserEmail), throwsA(isA<SendinblueApiException>()));
+      expect(() => Sendinblue.instance.getContact(email: testUserEmail),
+          throwsA(isA<SendinblueApiException>()));
     });
   });
 }

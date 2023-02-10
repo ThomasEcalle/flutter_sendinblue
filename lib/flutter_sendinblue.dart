@@ -21,7 +21,8 @@ class Sendinblue {
   }) {
     _instance = Sendinblue._(
       SendinblueRepository(
-        sendingBlueProvider: SendinblueApiProvider(apiKey: configuration.apiKey),
+        sendingBlueProvider:
+            SendinblueApiProvider(apiKey: configuration.apiKey),
       ),
     );
   }
@@ -80,7 +81,11 @@ class Sendinblue {
   /// Update a contact [properties] based on its [email].
   ///
   /// Note that the [properties] will only be handled by Sendinblue if they are already defined in your project.
-  Future<void> updateContactProperties({required String email, required Map<String, dynamic> properties}) async {
-    return _repository.updateContactProperties(email: email, properties: properties);
+  Future<void> updateContactProperties({
+    required String email,
+    required Map<String, dynamic> properties,
+  }) async {
+    return _repository.updateContactProperties(
+        email: email, properties: properties);
   }
 }
