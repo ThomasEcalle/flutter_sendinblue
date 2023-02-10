@@ -1,9 +1,9 @@
 import '../model/contact.dart';
 
-abstract class SendingBlueProvider {
+abstract class SendinblueProvider {
   final String apiKey;
 
-  SendingBlueProvider({required this.apiKey});
+  SendinblueProvider({required this.apiKey});
 
   Future<int> createContact({required String email});
 

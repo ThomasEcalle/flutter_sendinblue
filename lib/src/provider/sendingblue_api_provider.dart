@@ -4,10 +4,10 @@ import 'package:http/http.dart' as http;
 
 import '../exceptions/sendingblue_api_exception.dart';
 import '../model/contact.dart';
-import 'sendingblue_provider.dart';
+import 'sendinblue_provider.dart';
 
-class SendingBlueApiProvider extends SendingBlueProvider {
-  SendingBlueApiProvider({required super.apiKey});
+class SendinblueApiProvider extends SendinblueProvider {
+  SendinblueApiProvider({required super.apiKey});
 
   final String _baseUrl = 'https://api.sendinblue.com/v3';
 

@@ -1,10 +1,10 @@
 import 'model/contact.dart';
-import 'provider/sendingblue_provider.dart';
+import 'provider/sendinblue_provider.dart';
 
-class SendingBlueRepository {
-  final SendingBlueProvider sendingBlueProvider;
+class SendinblueRepository {
+  final SendinblueProvider sendingBlueProvider;
 
-  SendingBlueRepository({required this.sendingBlueProvider});
+  SendinblueRepository({required this.sendingBlueProvider});
 
   Future<int> createContact({required String email}) async {
     return await sendingBlueProvider.createContact(email: email);
@@ -26,11 +26,11 @@ class SendingBlueRepository {
     return await sendingBlueProvider.getContact(email: email);
   }
 
-  Future<void> addUserInEmailsBlackList({required String email}) async {
+  Future<void> addContactInEmailsBlackList({required String email}) async {
     return await sendingBlueProvider.addContactInEmailsBlackList(email: email);
   }
 
-  Future<void> removeUserFromEmailsBlackList({required String email}) async {
+  Future<void> removeContactFromEmailsBlackList({required String email}) async {
     return await sendingBlueProvider.removeContactFromEmailsBlackList(email: email);
   }
 

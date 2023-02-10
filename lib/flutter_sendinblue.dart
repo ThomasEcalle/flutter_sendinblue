@@ -1,40 +1,40 @@
 library flutter_sendingblue;
 
 import 'src/model/contact.dart';
-import 'src/model/sendingblue_configuration.dart';
+import 'src/model/sendinblue_configuration.dart';
 import 'src/provider/sendingblue_api_provider.dart';
-import 'src/sendingblue_repository.dart';
+import 'src/sendinblue_repository.dart';
 
 export 'src/exceptions/sendingblue_api_exception.dart';
 export 'src/model/contact.dart';
-export 'src/model/sendingblue_configuration.dart';
+export 'src/model/sendinblue_configuration.dart';
 
-class SendinBlue {
-  static SendinBlue? _instance;
+class Sendinblue {
+  static Sendinblue? _instance;
 
   static void initialize({
-    required SendingBlueConfiguration configuration,
+    required SendinblueConfiguration configuration,
   }) {
-    _instance = SendinBlue._(
+    _instance = Sendinblue._(
       configuration,
-      SendingBlueRepository(
-        sendingBlueProvider: SendingBlueApiProvider(apiKey: configuration.apiKey),
+      SendinblueRepository(
+        sendingBlueProvider: SendinblueApiProvider(apiKey: configuration.apiKey),
       ),
     );
   }
 
-  static SendinBlue get instance {
+  static Sendinblue get instance {
     final instance = _instance;
     if (instance == null) {
-      throw Exception('SendingBlue has not been initialized');
+      throw Exception('Sendinblue has not been initialized');
     }
     return instance;
   }
 
-  final SendingBlueConfiguration _configuration;
-  final SendingBlueRepository _repository;
+  final SendinblueConfiguration _configuration;
+  final SendinblueRepository _repository;
 
-  SendinBlue._(this._configuration, this._repository);
+  Sendinblue._(this._configuration, this._repository);
 
   Future<int> createContact({required String email}) async {
     return _repository.createContact(email: email);
@@ -56,12 +56,12 @@ class SendinBlue {
     return _repository.deleteContact(email: email);
   }
 
-  Future<void> addUserInEmailsBlackList({required String email}) async {
-    return _repository.addUserInEmailsBlackList(email: email);
+  Future<void> addContactInEmailsBlackList({required String email}) async {
+    return _repository.addContactInEmailsBlackList(email: email);
   }
 
-  Future<void> removeUserFromEmailsBlackList({required String email}) async {
-    return _repository.removeUserFromEmailsBlackList(email: email);
+  Future<void> removeContactFromEmailsBlackList({required String email}) async {
+    return _repository.removeContactFromEmailsBlackList(email: email);
   }
 
   Future<void> updateContactProperties({required String email, required Map<String, dynamic> properties}) async {
