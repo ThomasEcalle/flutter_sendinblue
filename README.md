@@ -1,7 +1,4 @@
-
 This package provides a simple wrapper around the Sendinblue API.
-
-
 
 > ⚠️ This package is **not an official package** from Sendinblue.
 
@@ -17,7 +14,8 @@ Feel free to contribute or mention me if you need other wrappers.
 
 ## Features
 
-- Contacts
+### Contacts
+
 - Create a contact
 - Get all contacts
 - Get contacts with pagination
@@ -31,9 +29,10 @@ Feel free to contribute or mention me if you need other wrappers.
 
 All you need to start playing with the API is to initialise the package with your API key like this :
 
-```  
+```dart
 Sendinblue.initialize(  
- configuration: SendinblueConfiguration(apiKey: 'your-api-key'));  
+ configuration: SendinblueConfiguration(apiKey: 'your-api-key'),
+);  
 ```  
 This initialisation can be done at any time but **must be done before any other call**.
 
