@@ -20,7 +20,6 @@ class Sendinblue {
     required SendinblueConfiguration configuration,
   }) {
     _instance = Sendinblue._(
-      configuration,
       SendinblueRepository(
         sendingBlueProvider: SendinblueApiProvider(apiKey: configuration.apiKey),
       ),
@@ -35,10 +34,9 @@ class Sendinblue {
     return instance;
   }
 
-  final SendinblueConfiguration _configuration;
   final SendinblueRepository _repository;
 
-  Sendinblue._(this._configuration, this._repository);
+  Sendinblue._(this._repository);
 
   /// Create a contact based on [email].
   Future<int> createContact({required String email}) async {
