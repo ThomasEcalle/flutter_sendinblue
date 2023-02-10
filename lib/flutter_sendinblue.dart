@@ -5,6 +5,10 @@ import 'src/model/sendingblue_configuration.dart';
 import 'src/provider/sendingblue_api_provider.dart';
 import 'src/sendingblue_repository.dart';
 
+export 'src/exceptions/sendingblue_api_exception.dart';
+export 'src/model/contact.dart';
+export 'src/model/sendingblue_configuration.dart';
+
 class SendinBlue {
   static SendinBlue? _instance;
 
