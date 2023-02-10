@@ -1,3 +1,4 @@
+
 This package provides a simple wrapper around the Sendinblue API.
 
 > ⚠️ This package is **not an official package** from Sendinblue.
@@ -76,10 +77,17 @@ await Sendinblue.instance.updateContactProperties(
   },  
 );
 ```
+
 > Please note that the Sendinblue API will update properties only if they are already created on the platform (we could also use the API but it is not implemented in this package for the moment)
 >
 
+> 💡 You could have some "Date" attributes on Sendinblue.
+> Please note that Sendinblue API is waiting for 'YYYY-MM-DD' formatted dates.
+> In order to facilitate this usage,the package includes an extension on DateTime :
 
+```dart
+DateTime(2021, 1, 1).toSendinBlueFormat(); // '2021-01-01'
+```
 
 ## Additional information
 
