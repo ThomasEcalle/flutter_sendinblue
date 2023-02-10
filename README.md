@@ -60,7 +60,7 @@ await Sendinblue.instance.deleteContact(email: 'delete@gmail.com');
 ```
 - Add contact in email black list
 ```dart
-await Sendinblue.instance.addUserInEmailsBlackList(email: 'blacklisted@gmail.com');
+await Sendinblue.instance.addContactInEmailsBlackList(email: 'blacklisted@gmail.com');
 ```
 -  Remove contact of email black list
 ```dart
@@ -76,7 +76,7 @@ await Sendinblue.instance.updateContactProperties(
   },  
 );
 ```
-> Please note that the Sendinblue API will update properties only if they are already created on the platform (we coule also use the API but it is not implemented in this package for the moment)
+> Please note that the Sendinblue API will update properties only if they are already created on the platform (we could also use the API but it is not implemented in this package for the moment)
 >
 
 
