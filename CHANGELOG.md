@@ -1,3 +1,11 @@
+## 0.1.1
+
+### Minor changes
+
+* Add a small example app
+* Add an Extension to the DateTime class to get a Sendinblue date format easily
+* Add some e2e tests
+
 ## 0.1.0+1
 
 ### Minor documentation change
