@@ -6,8 +6,7 @@ import 'contact_detail_page.dart';
 void main() {
   Sendinblue.initialize(
     configuration: SendinblueConfiguration(
-      apiKey:
-          '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',
+      apiKey: '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',
     ),
   );
   runApp(const MyApp());
@@ -58,8 +57,7 @@ class MyHomePage extends StatelessWidget {
                     style: Theme.of(context).textTheme.bodyText1,
                   ),
                   subtitle: Text('id: ${contact.id}'),
-                  onTap: () =>
-                      ContactDetailPage.navigateTo(context, contact.email),
+                  onTap: () => ContactDetailPage.navigateTo(context, contact.email),
                 );
               },
             );
@@ -74,6 +72,22 @@ class MyHomePage extends StatelessWidget {
           }
         },
       ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: toto,
+      ),
     );
+  }
+
+  void toto() async {
+    try {
+      await Sendinblue.instance.updateContactProperties(email: 'uneadresse@gmail.com', properties: {
+        'NOM': 'Doe',
+        'PRENOM': 'John',
+        'AGE': 42,
+      });
+    } catch (e) {
+      print('Yoyo error : $e');
+    }
   }
 }

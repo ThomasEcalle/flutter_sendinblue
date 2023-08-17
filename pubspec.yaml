@@ -1,6 +1,6 @@
 name: flutter_sendinblue
 description: This package is a wrapper for the SendinBlue API. It allows you to manipulate your contacts.
-version: 0.1.1
+version: 0.2.0
 homepage: https://github.com/ThomasEcalle/flutter_sendinblue
 
 environment:
@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  http: ^0.13.5
+  http: ^1.1.0
 
 dev_dependencies:
   flutter_test:
